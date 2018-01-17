@@ -1,20 +1,17 @@
 {% extends "base.html" %}
 {% block index %}
 
-  <h1>Campsite Map</h1>
+  <h1></h1>
 
-  <div class="filter">
-    <form method="post">
-      {{ content.form.name.label }}
-      {{ content.form.name }}
-      {{ content.form.state.label }}
-      {{ content.form.state }}
-      {{ content.form.org.label }}
-      {{ content.form.org }}
-      {{ content.form.submit }}
-    </form>
-  </div>
+  <h4>Which came first? </h4>
 
-  <div class="map" id="map"></div>
+  <ul>
+    <button id="event1" class="event1" value={{ content.event1["year"] }} onclick="display_event1()"> {{ content.event1["description"] }} </button><bold id="year1"></bold><br>
+    <button id="event2" class="event2" value={{ content.event2["year"] }} onclick="display_event2()"> {{ content.event2["description"] }} </button><bold id="year2"></bold><br>
+  </ul>
+
+  <div id="result" class="result"></div><br>
+
+  <input type="button" value="Next Question" onClick="window.location.reload()">
 
 {% endblock %}
